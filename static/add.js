@@ -61,6 +61,5 @@ function showCurrent () {
 showCurrent()
 showProposed()
 
-// pick up on the user manually editing the URL
-// setInterval(showProposed, 500);
+addEventListener('hashchange', showProposed)
 
