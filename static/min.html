@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <script>
+var userData = {};      
+for (var i=0; localStorage.length > i; i++) {
+  var key = localStorage.key(i);
+  userData[key] = localStorage.getItem(key);      
+}
+parent.postMessage(userData, '*');
+console.log('send parent window user data: ', userData);
+    </script>
+    <title>public user data service</title>
+  </head>
+  <body>
+    <p>See <a href="/">about this site</a>.</p>
+  </body>
+</html>

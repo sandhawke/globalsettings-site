@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>public user data service</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+
+    <p>This site lets users create settings which every website can see.</p>
+
+    <p>Since manual approval from the user is required for each
+    setting, the privacy risk seems small.  But users need to be
+    careful not to create any settings which would cause them to be
+    tracked in a way they don't want, of course.</p>
+
+    <p>Everything is done client-side in JavaScript.  Data never goes
+    to our server; it lives in the brower's localStorage.  One might
+    call this "cross-origin cookies".  To balance the privacy threat
+    that suggests, we always prompt the user before saving
+    anything.</p>
+    
+    <h2>Managing Settings</h2>
+    
+    <p>Web Apps propose settings by sending the user (maybe in an iframe) to <tt>http://globalsettings.org/add#<i>key</i>=<i>value</i></tt>.  Then the user can save them or not, as they like.</p>
+
+    <p>Try it with: <a href="http://globalsettings.org/add#likes-infinite-scroll=true">http://globalsettings.org/add#likes-infinite-scroll=true</a> or <a href="http://globalsettings.org/add#adult-content=never">http://globalsettings.org/add#adult-content=never</a></p>
+
+    <h2>Reading Settings</h2>
+    
+    <p>Web Apps read the settings by opening http://globalsettings.org/min in an iframe.  As soon as the iframe runs, they should get a 'message' event containing all the global settings.</p>
+
+    <p>For example, on mine include this in the HTML of the page:</p>
+
+    <pre>&lt;iframe src="http://globalsettings.org/min" style="display: none">&lt;/iframe></pre>
+
+    <p>And include this in the JavaScript:</p>
+    <pre>
+ window.addEventListener('message', (event) => {
+    const origin = event.origin || event.originalEvent.origin
+    if (origin !== "http://globalsettings.org") return;
+    const settings = event.data
+    if (settings.favoriteColorOrWhatever) ...
+ }
+    </pre>
+ 
+    
+  </body>
+</html>

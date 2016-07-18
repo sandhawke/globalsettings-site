@@ -1,0 +1,65 @@
+
+.key {
+    white-space: pre;
+}
+
+.field {
+    padding: 0.40em;
+    // margin: 0.5em;
+    // background-color: #EEEEEE;
+    font-weight: bold;
+}
+
+button {
+    margin: 0.4em;
+}
+
+table {
+ 	  font-size: 0.8em;
+ 	  margin-left: 0.5em;
+ 	  margin-bottom: 0.5em;
+ 	  width: 300px;
+}
+
+table caption {
+ 	  font-weight: bold;
+}
+
+table th {
+    font-weight: normal;
+    min-width: 10em;
+}
+
+table td {
+ 	  padding: 0.1em;
+}
+
+table {
+ 	  border: none;
+ 	  border-collapse: collapse;
+}
+
+table td, table th {
+ 	  /* text-align: center;  */
+ 	  border: 1px solid #aaaaaa;
+ 	  padding-left: 1em;
+ 	  padding-right: 1em;
+}
+
+table th {
+ 	  background-color: #f9f9f9;
+}
+
+table td {
+ 	  /* background-color: #fcfcfc;   */
+}
+
+table td.doc0 {
+    /* background-color: #fcfcfc;  */
+}
+
+table tr:hover {
+    background-color:#eeeeee;
+}
+ 
+ 
