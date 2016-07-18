@@ -28,9 +28,9 @@
 
     <h2>Reading Settings</h2>
     
-    <p>Web Apps read the settings by opening http://globalsettings.org/min in an iframe.  As soon as the iframe runs, they should get a 'message' event containing all the global settings.</p>
+    <p>Web Apps read the settings by opening http://globalsettings.org/min in an iframe.  As soon as the iframe loads, they should get a 'message' event containing all the global settings.</p>
 
-    <p>For example, on mine include this in the HTML of the page:</p>
+    <p>For example, one might include this, somewhere in the body of the page:</p>
 
     <pre>&lt;iframe src="http://globalsettings.org/min" style="display: none">&lt;/iframe></pre>
 
@@ -43,7 +43,10 @@
     if (settings.favoriteColorOrWhatever) ...
  }
     </pre>
- 
+
+    <h2>Discussion</h2>
+
+    <p>Please discuss via <a href="https://github.com/sandhawke/globalsettings-site/issues">github issues</a>.</p>
     
   </body>
 </html>
